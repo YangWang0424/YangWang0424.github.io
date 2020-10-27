@@ -1,35 +1,218 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title><Assignment 1></title>
+  <meta charset="utf-8">
+  <title>Benny's List</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <!--
+      This 3rd-party stylesheet makes available the font families to be used
+      for this page ("Roboto" and "Roboto Slab").
+    -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:100" rel="stylesheet">
+
+  <!--
+      This 3rd-party stylesheet incorporates SVG icons from Font Awesome:
+      http://fontawesome.com/.  Specifically, each of the <i> elements below
+      incorporates an icon from Font Awesome.
+    -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous"> -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
+
 <body>
-    <h5>The link to the code blog:</h5>
-        <a href = "https://yangwang0424.github.io/blog ">line to blog</a>
-    <h5> My name and what you prefer to be called </h5>
-      <p> Yang Wang, you can call me Alan</P>
-      <h5> Your OSU email address </h5>
-      <p> wangya4@oregonstate.edu </p>
-      <h5> Your major and year of study </h5>
-      <p> Computer Science, 2017 Fall </p>
-      <h5> What is the most complex or interesting thing you've done with your current web development skills? </h5>
-      <p> The most complicated thing is that I haven't studied Web development, so I have a lot of new concepts to learn.</p>
-      <h5> What do you hope to learn from this class? </h5>
-      <p> I want to learn how to develop an amazing website. </p>
-      <h5>  Have you signed up for our course Piazza forum? </h5>
-      <p> Yes, I also looked through some of the questions raised by my classmates. </p>
-      <h5> A description of the most interesting fact about you or the most unique experience you've had.
-      <ul>
-        <li> In high school, I played basketball very well.<li>
-        <li> I once helped our class get the first place in the grade basketball game.<li>
-        <li> After that, the school basketball coach wanted me to represent the school to participate in the municipal competition.<li>
-        <li> I gave up this opportunity for the college entrance examination, but later I chose to study abroad instead of taking the college entrance examination.<li>
-      </ul> 
-      <h5> A photo with a clear picture of your face </h5>
-      <p>
-        <img src="http://pic1.win4000.com/wallpaper/8/5642cfb5990a7.jpg" alt= "my face picture">
-      </p>
-        
+
+  <header>
+
+    <div class="header-image-container">
+      <img src="benny.jpg" alt="Benny logo">
+    </div>
+
+    <h1 class="site-title"><a href="#">Benny's List</a></h1>
+
+  </header>
+
+  <main class="content">
+    <aside class="filter-container">
+
+      <h2>Filters</h2>
+
+      <div class="filter-input-container">
+        <label for="filter-text" class="filter-input-label">Text</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-text" id="filter-text" class="filter-input filter-input-text">
+        </div>
+      </div>
+
+      <div class="filter-input-container">
+        <label for="filter-min-price" class="filter-input-label">Price</label>
+        <div class="filter-input-element">
+          <input type="text" name="filter-min-price" id="filter-min-price" class="filter-input filter-input-min"
+            placeholder="min">
+        </div>
+        <div class="filter-input-element">
+          <input type="text" name="filter-max-price" id="filter-max-price" class="filter-input filter-input-max"
+            placeholder="max">
+        </div>
+      </div>
+
+      <div class="filter-input-container">
+        <label for="filter-city" class="filter-input-label">City</label>
+        <div class="filter-input-element">
+          <select id="filter-city" class="filter-input filter-input-city" name="filter-city">
+            <option selected value="">Any</option>
+            <option>Corvallis</option>
+            <option>Albany</option>
+            <option>Eugene</option>
+            <option>Portland</option>
+            <option>Salem</option>
+            <option>Bend</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-input-container">
+        <fieldset id="filter-condition" class="filter-fieldset">
+          <legend>Condition</legend>
+          <div>
+            <input type="checkbox" name="filter-condition" id="filter-condition-new" value="new">
+            <label for="filter-condition-new">New</label>
+          </div>
+          <div>
+            <input type="checkbox" name="filter-condition" id="filter-condition-excellent" value="excellent">
+            <label for="filter-condition-excellent">Excellent</label>
+          </div>
+          <div>
+            <input type="checkbox" name="filter-condition" id="filter-condition-good" value="good">
+            <label for="filter-condition-good">Good</label>
+          </div>
+          <div>
+            <input type="checkbox" name="filter-condition" id="filter-condition-fair" value="fair">
+            <label for="filter-condition-fair">Fair</label>
+          </div>
+          <div>
+            <input type="checkbox" name="filter-condition" id="filter-condition-poor" value="poor">
+            <label for="filter-condition-poor">Poor</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <button id="filter-update-button" class="action-button">Update</button>
+
+    </aside>
+
+    <section id="posts">
+
+      <div class="post">
+        <div class="post-contents">
+          <div class="post-image-container">
+            <img
+              src="https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg"
+              alt="Super nice laptop">
+          </div>
+          <div class="post-info-container">
+            <a href="#" class="post-title">Super nice laptop</a> <span class="post-price">$500</span> <span
+              class="post-city">(Eugene)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-contents">
+          <div class="post-image-container">
+            <img src="images/meadow-yellow-rain-coat-mountains.png" alt="Yellow Raincoat">
+          </div>
+          <div class="post-info-container">
+            <a href="#" class="post-title">Yellow raincoat</a> <span class="post-price">$20</span> <span
+              class="post-city">(Corvallis)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-contents">
+          <div class="post-image-container">
+            <img
+              src="http://static-21.sinclairstoryline.com/resources/media/9e359e52-2d79-4aa6-a43b-2ba534b9db0c-large16x9_378b19aa394049a4a9ca7101e4e75be4voodoodoughnutrecord660.jpg?1463527394583"
+              alt="Very large pile of interesting donuts">
+          </div>
+          <div class="post-info-container">
+            <a href="#" class="post-title">Very large pile of interesting donuts</a> <span
+              class="post-price">$100</span> <span class="post-city">(Portland)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-contents">
+          <div class="post-image-container">
+            <img src="images/books.png" alt="Oregon laws">
+          </div>
+          <div class="post-info-container">
+            <a href="#" class="post-title">Oregon laws</a> <span class="post-price">$250</span> <span
+              class="post-city">(Salem)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-contents">
+          <div class="post-image-container">
+            <img src="images/o-SUNSHINE-facebook.png" alt="Sunshine">
+          </div>
+          <div class="post-info-container">
+            <a href="#" class="post-title">Sunshine</a> <span class="post-price">$1</span> <span
+              class="post-city">(Bend)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-contents">
+          <div class="post-image-container">
+            <img src="http://www.portlandhipster.com/wp-content/uploads/2015/09/hipsters.jpg" alt="Hipsters">
+          </div>
+          <div class="post-info-container">
+            <a href="#" class="post-title">Hipsters</a> <span class="post-price">$99</span> <span
+              class="post-city">(Portland)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-contents">
+          <div class="post-image-container">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/102707-Oregon-AutzenStadium-ext.jpg/1200px-102707-Oregon-AutzenStadium-ext.jpg"
+              alt="Football stadium (we kind of want to build a new one)">
+          </div>
+          <div class="post-info-container">
+            <a href="#" class="post-title">Football stadium (we kind of want to build a new one)</a> <span
+              class="post-price">$20000000</span> <span class="post-city">(Eugene)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-contents">
+          <div class="post-image-container">
+            <img src="https://farm2.staticflickr.com/1258/1366422925_25663f44c8_z.jpg" alt="Very nice farmer's market">
+          </div>
+          <div class="post-info-container">
+            <a href="#" class="post-title">Very nice farmer's market</a> <span class="post-price">$10000</span> <span
+              class="post-city">(Corvallis)</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <button type="button" id="sell-something-button"><i class="fa fa-plus fa-3x"></i></button>
+
 </body>
+
 </html>
